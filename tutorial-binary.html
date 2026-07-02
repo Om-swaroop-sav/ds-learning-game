@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Binary Search Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="binary-scroll">
+
+    <!-- Logout Button -->
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
+
+    <div class="binary-container">
+
+        <h1>BINARY SEARCH</h1>
+
+        <p class="binary-description">
+            Binary Search works only on sorted arrays. It repeatedly finds
+            the middle element and removes half of the search space until
+            the target is found.
+        </p>
+
+        <div class="tutorial-row">
+
+            <!-- Rules Section -->
+
+            <div class="rules-card">
+
+                <h2>Rules</h2>
+
+                <p>✓ Array must be sorted.</p>
+
+                <p>✓ Calculate Mid = (Low + High) / 2.</p>
+
+                <p>✓ Compare Mid with Target.</p>
+
+                <p>✓ Search Left or Right half.</p>
+
+                <p>✓ Continue until target is found.</p>
+
+            </div>
+
+            <!-- Example Section -->
+
+            <div class="example-card">
+
+                <h2>Example</h2>
+
+                <div class="target-box">
+                    Find 25
+                </div>
+
+                <div class="indexes">
+                    <span>0</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                </div>
+
+                <div class="array">
+
+                    <div class="box">5</div>
+                    <div class="box">10</div>
+                    <div class="box">15</div>
+                    <div class="box mid">20</div>
+                    <div class="box found">25</div>
+                    <div class="box">30</div>
+                    <div class="box">35</div>
+
+                </div>
+
+                <div class="mid-text">
+                    ↑ MID = 3
+                </div>
+
+                <div class="steps-box">
+
+                    <strong>Step 1:</strong><br>
+                    (0 + 6) / 2 = 3
+
+                    <br><br>
+
+                    arr[3] = 20
+
+                    <br><br>
+
+                    20 &lt; 25
+
+                    <br><br>
+
+                    Search Right Half
+
+                    <br><br>
+
+                    New Range: 4 to 6
+
+                    <br><br>
+
+                    Mid = 4
+
+                    <br><br>
+
+                    25 ✓ Found
+
+                </div>
+
+                <div class="wrong">
+                    ❌ Wrong: Selecting 25 directly.
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="play-btn"
+            onclick="location.href='binary.html'">
+            PLAY
+        </button>
+
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.clear();
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+
+</html>

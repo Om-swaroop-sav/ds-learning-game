@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Game</title>
+    <link rel="stylesheet" href="binary.css">
+</head>
+
+<body>
+
+    <!-- Falling Leaves -->
+    <div class="leaves">
+        <span>🍃</span>
+        <span>🍂</span>
+        <span>🍃</span>
+        <span>🍂</span>
+        <span>🍃</span>
+        <span>🍂</span>
+        <span>🍃</span>
+        <span>🍂</span>
+    </div>
+<button class="logout-btn" onclick="logout()">
+    Logout
+</button>
+
+
+
+</body>
+<script>
+function logout(){
+    localStorage.clear();
+    window.location.href = "index.html";
+}
+</script>
+</html>
+    <!-- Result Popup -->
+    <div class="popup" id="popup">
+
+        <h1>TARGET FOUND!</h1>
+
+        <h2 id="popupText"></h2>
+
+        <button onclick="newGame()">
+            NEW GAME
+        </button>
+
+    </div>
+
+    <!-- Title -->
+    <h1 class="title">
+        BINARY SEARCH
+    </h1>
+
+    <p class="subtitle">
+        Calculate Mid = (Low + High) / 2
+    </p>
+
+    <!-- Controls -->
+
+    <div class="controls">
+
+        Array Size :
+
+        <select id="size">
+
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7" selected>7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+
+        </select>
+
+        <button onclick="newGame()">
+            GENERATE
+        </button>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="container">
+
+        <!-- LEFT PANEL -->
+
+        <div class="left-panel">
+
+            <div class="target-card">
+
+                <h3>TARGET</h3>
+
+                <div id="target">
+                    0
+                </div>
+
+            </div>
+
+            <h2>SORTED ARRAY</h2>
+
+            <div class="indexes" id="indexes">
+
+            </div>
+
+            <div class="array" id="array">
+
+            </div>
+
+            <div class="mid-arrow">
+
+                ↑
+
+                <p>MID</p>
+
+            </div>
+
+            <div class="instructions">
+
+                <h3>HOW TO PLAY</h3>
+
+                <p>1. Enter Low and High.</p>
+
+                <p>2. Click Calculate Mid.</p>
+
+                <p>3. Compare Mid Value.</p>
+
+                <p>4. Choose Left or Right.</p>
+
+                <p>5. Repeat until target is found.</p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+
+        <div class="right-panel">
+
+            <div class="box">
+
+                <h2>STEP 1</h2>
+
+                <div class="input-row">
+
+                    <div>
+
+                        LOW
+
+                        <input
+                            type="number"
+                            id="low">
+
+                    </div>
+
+                    <div>
+
+                        HIGH
+
+                        <input
+                            type="number"
+                            id="high">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="box">
+
+                <h2>STEP 2</h2>
+
+                <div class="formula">
+
+                    (
+
+                    <span id="lowDisplay">
+                        0
+                    </span>
+
+                    +
+
+                    <span id="highDisplay">
+                        0
+                    </span>
+
+                    )
+
+                    / 2
+
+                    =
+
+                    <span id="midDisplay">
+                        ?
+                    </span>
+
+                </div>
+
+                <button class="calculate"
+                        onclick="calculateMid()">
+
+                    CALCULATE MID
+
+                </button>
+
+            </div>
+
+            <div class="box">
+
+                <h2>MID DETAILS</h2>
+
+                <div class="details">
+
+                    <div>
+
+                        MID INDEX
+
+                        <h1 id="midIndex">
+                            -
+                        </h1>
+
+                    </div>
+
+                    <div>
+
+                        MID VALUE
+
+                        <h1 id="midValue">
+                            -
+                        </h1>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="box">
+
+                <h2>COMPARE</h2>
+
+                <div class="buttons">
+
+                    <button class="leftBtn"
+                            onclick="goLeft()">
+
+                        SEARCH LEFT
+
+                    </button>
+
+                    <button class="equalBtn"
+                            onclick="found()">
+
+                        FOUND
+
+                    </button>
+
+                    <button class="rightBtn"
+                            onclick="goRight()">
+
+                        SEARCH RIGHT
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+
+    <div class="bottom">
+
+        <div>
+
+            STATUS
+
+            <h3 id="status">
+                Calculate Mid
+            </h3>
+
+        </div>
+
+        <div>
+
+            STEPS
+
+            <h3 id="steps">
+                0
+            </h3>
+
+        </div>
+
+        <div>
+
+            COMPARISONS
+
+            <h3 id="comparisons">
+                0
+            </h3>
+
+        </div>
+
+        <div>
+
+            RANGE
+
+            <h3 id="range">
+                0 - 0
+            </h3>
+
+        </div>
+
+        <button class="newBtn"
+                onclick="newGame()">
+
+            NEW GAME
+
+        </button>
+
+    </div>
+
+    <script src="binary.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Searching Quest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="startScreen" class="screen">
+    <h1 class="title"> SEARCH QUEST </h1>
+    <button class="startBtn" onclick="showMenu()">
+        START
+    </button>
+</div>
+
+<div id="menuScreen" class="screen hidden">
+    <h1>Select Algorithm</h1>
+
+    <div class="card"
+         onclick="location.href='tutorial-linear.html'">
+        <h2>Linear Search</h2>
+        <p>Check every element one by one.</p>
+    </div>
+
+    <div class="card"
+         onclick="location.href='tutorial-binary.html'">
+        <h2>Binary Search</h2>
+        <p>Divide and conquer search.</p>
+    </div>
+
+</div>
+
+<script src="menu.js"></script>
+
+</body>  
+</html>

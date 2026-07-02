@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Search Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="logout-btn" onclick="logout()">
+    Logout
+</button>
+
+<!-- Background -->
+<div class="curve curve1"></div>
+<div class="curve curve2"></div>
+
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<button class="logout-btn" onclick="logout()">
+    Logout
+</button>
+
+<script>
+function logout(){
+
+    localStorage.removeItem("currentUser");
+
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+<script>
+function logout(){
+    localStorage.clear();
+    window.location.href = "index.html";
+}
+</script>
+</html>
+
+<!-- Result Popup -->
+<div class="popup" id="popup">
+
+    <h1>TARGET FOUND!</h1>
+
+    <h2 id="popupText"></h2>
+
+    <button class="popup-btn"
+            onclick="restartGame()">
+        NEW GAME
+    </button>
+
+</div>
+
+<div class="game-container">
+
+    <h1 class="game-title">
+        LINEAR SEARCH
+    </h1>
+
+    <div class="controls">
+
+        <label>Array Size :</label>
+
+        <select id="size">
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option selected>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+
+        <button onclick="restartGame()">
+            Generate
+        </button>
+
+    </div>
+
+    <div class="status" id="status">
+        Start searching from index 0.
+    </div>
+
+    <div class="result" id="result"></div>
+
+    <div class="pointer-area">
+
+        <div class="target-pointer" id="targetPointer">
+
+            <div class="target-box" id="targetBox">
+                <span id="target"></span>
+            </div>
+
+            <div class="arrow">
+                ↓
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="index-row" id="indexes"></div>
+
+    <div class="array-row" id="array"></div>
+
+    <div class="info">
+        Current Index :
+        <span id="current">0</span>
+    </div>
+
+    <button class="new-game-btn"
+            onclick="restartGame()">
+        NEW GAME
+    </button>
+
+</div>
+
+<script src="linear.js"></script>
+
+</body>
+</html>
